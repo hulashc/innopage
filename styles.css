@@ -1,3 +1,4 @@
+/* General Styles for Body and HTML */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Soft background gradient */
 }
 
+/* Header Styles */
 header {
     background: linear-gradient(135deg, #1a73e8, #4285f4); /* Gradient for the header */
     color: white;
@@ -60,7 +62,6 @@ nav ul li a:hover {
     min-width: 200px; /* Set minimum width */
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
     z-index: 1; /* Ensure dropdown is on top */
-    border-radius: 5px; /* Add rounded corners for a smooth look */
 }
 
 /* Show dropdown on hover */
@@ -87,16 +88,7 @@ nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Hover effect for dropdown links */
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block; /* Show dropdown when hovering over the parent */
-}
-
-/* Change background color on hover for dropdown links */
-.dropdown-content li a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Hover effect for dropdown links */
-}
-
+/* Section Styles */
 section {
     padding: 40px 20px; /* Increased padding for sections */
     margin: 10px;
@@ -105,30 +97,18 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-/* Contact page specific styles */
-.contact-page {
-    background-image: url('/assets/bg1.svg'), url('/assets/bg2.svg'), url('/assets/bg3.svg');
-    background-size: cover, cover, cover; /* Ensures images cover the area */
-    background-position: center, center, center; /* Center the images */
-    background-repeat: no-repeat, no-repeat, no-repeat; /* Prevent repetition */
-    min-height: 100vh; /* Full height of the viewport */
-    padding: 40px 20px; /* Adjust padding as necessary */
-    position: relative; /* Relative position for z-index stacking */
-    z-index: 1; /* Stack below content */
+/* Contact Section Styles */
+.contact-section {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between form and map */
+    background: linear-gradient(135deg, white 0%, #d3d3d3 100%); /* White to light grey gradient */
+    padding: 40px 20px; /* Add padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    min-height: 100vh; /* Ensure the section takes the full height of the page */
 }
 
-/* Optional: Add a color overlay for better readability */
-.contact-page::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7); /* White overlay with transparency */
-    z-index: -1; /* Stack it behind the content */
-}
-
+/* Heading Styles */
 h2 {
     color: #1a73e8; /* Blue color for section headings */
 }
@@ -138,7 +118,8 @@ form {
     display: flex;
     flex-direction: column;
     max-width: 600px; /* Maximum width for the form */
-    margin: 0 auto; /* Center the form */
+    margin: 0; /* Remove auto margin for the form */
+    padding: 20px; /* Optional: Add padding to the form */
 }
 
 form label {
@@ -153,7 +134,6 @@ form label {
 form input,
 form textarea {
     width: 100%; /* Full width for better responsiveness */
-    max-width: 600px; /* Limit maximum width to 600px */
     padding: 10px; /* Increased padding for better usability */
     margin-top: 10px; /* Space between input fields */
     border: 2px solid #1a73e8;
@@ -188,6 +168,7 @@ button:hover {
     transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
 
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 20px 0; /* More padding for better spacing */
@@ -209,11 +190,17 @@ footer {
     text-decoration: underline; /* Underline on hover for email link */
 }
 
-/* Meet the team section styles */
-.team-section {
-    display: flex;
-    justify-content: space-around; /* Space out team member cards */
-    margin-top: 40px; /* Space above the team section */
+/* Meet the Team Section Styles */
+.meet-the-team {
+    text-align: center; /* Center align text */
+}
+
+.team-container {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(2, 1fr); /* Create two columns for the second row */
+    gap: 20px; /* Space between cards */
+    max-width: 800px; /* Optional: Limit the width of the container */
+    margin: 0 auto; /* Center the container */
 }
 
 .team-member {
@@ -221,8 +208,13 @@ footer {
     border-radius: 10px; /* Rounded corners */
     padding: 20px; /* Padding inside cards */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for cards */
-    text-align: center; /* Center text */
     transition: transform 0.3s, box-shadow 0.3s; /* Animation for hover effect */
+}
+
+/* Adjust the top card */
+.team-member:nth-child(1) {
+    grid-column: 1 / -1; /* Make the first card span both columns */
+    margin-bottom: 20px; /* Space below the top card */
 }
 
 .team-member:hover {
@@ -230,8 +222,54 @@ footer {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
-.team-member img {
-    border-radius: 50%; /* Circular images */
-    width: 100px; /* Fixed width for images */
-    height: 100px; /* Fixed height for images */
+/* Map Styles */
+#map {
+    width: 45%; /* Set width for map */
+    height: 500px; /* Set height for map */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect for the map */
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative; /* For positioning the content */
+    height: 400px; /* Set height for the hero section */
+    background: url('img1.jpg') center/cover no-repeat; /* Background image */
+}
+
+.hero-content {
+    position: absolute; /* Position content absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset for true centering */
+    text-align: center; /* Center align text */
+    color: white; /* Text color */
+    z-index: 1; /* Ensure text is above the background */
+}
+
+.hero-section::before {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Stretch to the top */
+    left: 0; /* Stretch to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 0; /* Place it behind the text */
+}
+
+.hero-button {
+    margin-top: 20px; /* Space above button */
+    padding: 10px 20px; /* Padding for button */
+    background-color: #1a73e8; /* Button background */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth button hover effect */
+}
+
+.hero-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
