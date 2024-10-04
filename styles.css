@@ -6,11 +6,16 @@ body {
     background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Soft background gradient */
 }
 
+@font-face {
+    font-family: 'Getboreg'; /* Choose a name for your font */
+    src: url('assets/font/GetboregTrialOnly-2OZo3.ttf') format('truetype'); /* Path to your font file */
+}
+
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, rgba(135, 206, 250, 0.8), rgba(70, 130, 180, 0.8)); /* Sky blue gradient */
+    background: linear-gradient(135deg, rgba(90, 170, 230, 0.8), rgba(80, 180, 130, 0.8)); /* Sky blue gradient */
     color: white;
-    padding: 10px 0; /* Reduced padding for less spacing */
+    padding: 25px 0; /* Reduced padding for less spacing */
     display: flex;
     justify-content: space-between; /* Space between logo and navbar */
     align-items: center; /* Center items vertically */
@@ -21,8 +26,11 @@ header {
 
 h1 {
     margin: 0; /* Remove margin for the logo */
-    padding-left: 20px; /* Add left padding for spacing from the edge */
+    padding-left: 30px; /* Add left padding for spacing from the edge */
+    font-family: 'Getboreg', sans-serif; /* Use the custom font, fallback to sans-serif */
+    font-size: 36px; /* Increase font size (adjust the size as needed) */
 }
+
 
 nav ul {
     list-style: none;
@@ -40,7 +48,7 @@ nav ul li a {
     text-decoration: none;
     padding: 10px 15px; /* Space around nav links */
     display: inline-block;
-    transition: background-color 0.3s, transform 0.2s; /* Smooth hover effect with transform */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect with transform */
 }
 
 /* Change background color on hover for main nav links */
@@ -213,7 +221,7 @@ button:hover {
 .hero-section {
     position: relative; /* For positioning the content */
     height: 400px; /* Set height for the hero section */
-    background: radial-gradient(circle at center, #00ff91, #4000ff); /* Gradient background */
+    background: radial-gradient(circle at bottom, #00ff91, #4000ff); /* Gradient background */
     overflow: hidden; /* Prevent overflow */
 }
 
@@ -246,13 +254,24 @@ button:hover {
     z-index: 1; /* Ensure text is above the background */
 }
 
-
-
-/* Fade effect for the gradient on hover */
-.hero-button:hover::before {
-    opacity: 1; /* Show the gradient on hover */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
+/* Hero Section Styles */
+.hero-section {
+    position: relative; /* Positioning for content */
+    height: 400px; /* Height for the hero section */
+    overflow: hidden; /* Prevent content overflow */
+}
 
 .hero-section::before {
     content: ''; /* Empty content for pseudo-element */
@@ -261,9 +280,41 @@ button:hover {
     left: 0; /* Stretch to the left */
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    background: linear-gradient(270deg, #06db7e, #9e85e8, #06db7e); /* Gradient background */
+    background-size: 300% 300%; /* Expand gradient for smooth animation */
+    animation: gradient-animation 15s ease infinite; /* Animation properties */
     z-index: 0; /* Place it behind the text */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .hero-section::before {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Stretch to the top */
+    left: 0; /* Stretch to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 0; /* Place it behind the text */
+} */
 
 /* Additional styles for button if needed */
 .hero-button {
