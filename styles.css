@@ -92,29 +92,45 @@ h2 {
     color: #1a73e8; /* Blue color for section headings */
 }
 
+/* Optimized form for contact page */
 form {
     display: flex;
     flex-direction: column;
+    max-width: 600px; /* Maximum width for the form */
+    margin: 0 auto; /* Center the form */
 }
 
 form label {
     margin-top: 10px;
+    font-weight: bold; /* Make the labels bold */
+    font-size: 16px; /* Increase font size for better readability */
+    color: #1a73e8; /* Use a distinct blue color for the labels */
+    display: block; /* Ensure the label is on its own line */
+    margin-bottom: 5px; /* Add some space between the label and the input box */
 }
 
 form input,
 form textarea {
-    padding: 8px;
-    margin-top: 5px;
-    border: 2px solid #1a73e8; /* Border color for inputs */
-    border-radius: 5px; /* Rounded corners for inputs */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth border transition */
+    width: 100%; /* Full width for better responsiveness */
+    max-width: 600px; /* Limit maximum width to 600px */
+    padding: 10px; /* Increased padding for better usability */
+    margin-top: 10px; /* Space between input fields */
+    border: 2px solid #1a73e8;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 16px; /* Slightly larger font size */
+}
+
+form textarea {
+    min-height: 150px; /* Set a minimum height for the textarea */
 }
 
 form input:focus,
 form textarea:focus {
-    border-color: #4285f4; /* Darker blue on focus */
-    box-shadow: 0 0 5px rgba(66, 133, 244, 0.5); /* Glow effect on focus */
+    border-color: #4285f4;
+    box-shadow: 0 0 5px rgba(66, 133, 244, 0.5);
 }
+
 
 button {
     margin-top: 10px;
@@ -134,10 +150,25 @@ button:hover {
 
 footer {
     text-align: center;
-    padding: 10px 0;
-    background-color: #333;
-    color: white;
+    padding: 20px 0; /* More padding for better spacing */
+    background-color: #333; /* Dark background for footer */
+    color: white; /* White text color for contrast */
+    font-size: 14px; /* Set a smaller font size */
 }
+
+.footer-content p {
+    margin: 5px 0; /* Space between paragraphs */
+}
+
+.footer-content a {
+    color: #1a73e8; /* Color for email link */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-content a:hover {
+    text-decoration: underline; /* Underline on hover for email link */
+}
+
 
 /* Meet the team section styles */
 .team-section {
