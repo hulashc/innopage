@@ -47,6 +47,11 @@ nav ul li a:hover {
 }
 
 /* Dropdown container */
+.dropdown {
+    position: relative; /* Important for dropdown positioning */
+}
+
+/* Dropdown content styling */
 .dropdown-content {
     display: none; /* Hide dropdown by default */
     position: absolute; /* Position dropdown relative to parent */
@@ -54,7 +59,13 @@ nav ul li a:hover {
     background-color: #333; /* Dropdown background */
     min-width: 200px; /* Set minimum width */
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    z-index: 1;
+    z-index: 1; /* Ensure dropdown is on top */
+    border-radius: 5px; /* Add rounded corners for a smooth look */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown when hovering over the parent */
 }
 
 /* Dropdown links */
@@ -62,12 +73,18 @@ nav ul li a:hover {
     display: block; /* Stacks dropdown items vertically */
 }
 
+/* Style for dropdown links */
 .dropdown-content li a {
     padding: 12px 16px; /* Padding for dropdown links */
     display: block; /* Makes dropdown links fill the width */
-    color: white;
-    text-decoration: none;
+    color: white; /* Text color for dropdown links */
+    text-decoration: none; /* No underline for links */
     transition: background-color 0.3s; /* Smooth background color change */
+}
+
+/* Change background color on hover for dropdown links */
+.dropdown-content li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover effect for dropdown links */
 }
 
 /* Show dropdown on hover */
@@ -86,6 +103,30 @@ section {
     border-radius: 10px; /* Rounded corners for sections */
     background: white; /* White background for sections */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Contact page specific styles */
+.contact-page {
+    background-image: url('/assets/bg1.svg'), url('/assets/bg2.svg'), url('/assets/bg3.svg');
+    background-size: cover, cover, cover; /* Ensures images cover the area */
+    background-position: center, center, center; /* Center the images */
+    background-repeat: no-repeat, no-repeat, no-repeat; /* Prevent repetition */
+    min-height: 100vh; /* Full height of the viewport */
+    padding: 40px 20px; /* Adjust padding as necessary */
+    position: relative; /* Relative position for z-index stacking */
+    z-index: 1; /* Stack below content */
+}
+
+/* Optional: Add a color overlay for better readability */
+.contact-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* White overlay with transparency */
+    z-index: -1; /* Stack it behind the content */
 }
 
 h2 {
@@ -131,7 +172,6 @@ form textarea:focus {
     box-shadow: 0 0 5px rgba(66, 133, 244, 0.5);
 }
 
-
 button {
     margin-top: 10px;
     padding: 10px;
@@ -168,7 +208,6 @@ footer {
 .footer-content a:hover {
     text-decoration: underline; /* Underline on hover for email link */
 }
-
 
 /* Meet the team section styles */
 .team-section {
