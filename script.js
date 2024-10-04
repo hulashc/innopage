@@ -1,22 +1,31 @@
-// Fade in effect for sections
 document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
-    
-    sections.forEach(section => {
-        section.style.opacity = 0; // Start hidden
-        section.style.transition = 'opacity 1s';
-    });
+    const dropdowns = document.querySelectorAll('.dropdown');
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1; // Fade in
-                observer.unobserve(entry.target); // Stop observing once in view
-            }
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', function() {
+            this.querySelector('.dropdown-content').style.display = 'block';
+            setTimeout(() => {
+                this.querySelector('.dropdown-content').style.opacity = '1';
+            }, 0); // Allow the display to update before changing opacity
+        });
+
+        dropdown.addEventListener('mouseleave', function() {
+            this.querySelector('.dropdown-content').style.opacity = '0';
+            setTimeout(() => {
+                this.querySelector('.dropdown-content').style.display = 'none';
+            }, 300); // Match the transition duration
         });
     });
 
-    sections.forEach(section => {
-        observer.observe(section);
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.dropdown')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.querySelector('.dropdown-content').style.opacity = '0';
+                setTimeout(() => {
+                    dropdown.querySelector('.dropdown-content').style.display = 'none';
+                }, 300); // Match the transition duration
+            });
+        }
     });
 });
