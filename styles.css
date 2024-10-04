@@ -1,140 +1,153 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset default browser styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Light background for contrast */
-    color: #333; /* Default text color */
+    box-sizing: border-box;
 }
 
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #e0f7fa, #80deea); /* Light blue gradient background */
+}
+
+/* Header Styling */
 header {
-    background-color: #333; /* Dark background for header */
+    background: linear-gradient(135deg, #007bff, #00c4ff); /* Gradient for header */
     color: white;
     padding: 10px 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Navigation Styles */
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline-block; /* Change display to inline-block for better alignment */
-    position: relative; /* Important for dropdown positioning */
+    display: inline-block;
+    position: relative; /* Important for dropdown */
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 15px 20px; /* Add padding for better clickability */
-    display: inline-block; /* Ensure the link is a block for padding to work */
-    transition: background-color 0.3s; /* Smooth transition for hover */
+    padding: 10px 15px;
+    display: inline-block;
+    transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #555; /* Change color on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Change color on hover */
 }
 
-section {
-    padding: 20px;
-    margin: 10px;
-    background-color: white; /* White background for sections */
-    border-radius: 5px; /* Rounded corners for sections */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-h2 {
-    color: #333;
-    transition: color 0.3s; /* Smooth transition for heading color */
-}
-
-h2:hover {
-    color: #007BFF; /* Change color on hover */
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin-top: 10px;
-}
-
-form input, form textarea {
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc; /* Light border for inputs */
-    border-radius: 4px; /* Rounded corners for inputs */
-    transition: border-color 0.3s; /* Smooth transition for input focus */
-}
-
-form input:focus, form textarea:focus {
-    border-color: #007BFF; /* Change border color on focus */
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px; /* Rounded corners for buttons */
-    cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition for hover */
-}
-
-button:hover {
-    background-color: #0056b3; /* Change color on hover */
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #333;
-    color: white;
-    position: relative;
-    bottom: 0; /* Fix footer at bottom */
-    width: 100%; /* Full width */
-}
-
-/* General navigation styling */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Dropdown container */
+/* Dropdown Menu Styles */
 .dropdown-content {
     display: none; /* Hide dropdown by default */
-    position: absolute; /* Position dropdown relative to parent */
-    background-color: #333; /* Same as header */
-    min-width: 200px; /* Minimum width of dropdown */
+    position: absolute; /* Ensure dropdown is aligned */
+    background-color: #007bff; /* Blue background */
+    min-width: 200px; /* Adjust width */
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1; /* Ensure dropdown is above other elements */
-    margin-top: 5px; /* Add space between the dropdown and the button */
+    z-index: 1;
 }
 
-/* Dropdown links */
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
 .dropdown-content li {
     display: block; /* Stacks dropdown items vertically */
 }
 
 .dropdown-content li a {
-    padding: 12px 16px; /* Adjust padding for dropdown links */
+    padding: 12px 16px;
     display: block;
     color: white;
-    text-decoration: none;
-    transition: background-color 0.3s; /* Smooth transition for hover */
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block; /* Show dropdown when hovering over the parent */
+/* General Section Styling */
+section {
+    padding: 20px;
+    margin: 10px;
 }
 
-.dropdown-content li a:hover {
-    background-color: #555; /* Change color on hover */
+/* Headings Styling */
+h2 {
+    color: #333;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Labels */
+form label {
+    margin-top: 10px;
+    font-weight: bold; /* Bold labels for better visibility */
+}
+
+/* Form Inputs and Textareas */
+form input, form textarea {
+    padding: 12px; /* Increased padding for comfort */
+    margin-top: 5px;
+    border: 1px solid #007bff; /* Blue border for inputs */
+    border-radius: 5px; /* Rounded corners */
+    transition: border-color 0.3s; /* Smooth transition */
+}
+
+form input:focus, form textarea:focus {
+    border-color: #00c4ff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button Styling */
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+}
+
+/* Contact Section Styling */
+#contact {
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 600px; /* Center the content */
+    background-color: #ffffff; /* White background for form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    animation: slideIn 1s; /* Animation for content */
+}
+
+/* Keyframe for Slide-in Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
