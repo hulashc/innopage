@@ -286,36 +286,6 @@ button:hover {
     z-index: 0; /* Place it behind the text */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .hero-section::before {
-    content: ''; /* Empty content for pseudo-element */
-    position: absolute; /* Position it absolutely */
-    top: 0; /* Stretch to the top */
-    left: 0; /* Stretch to the left */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    z-index: 0; /* Place it behind the text */
-} */
-
 /* Additional styles for button if needed */
 .hero-button {
     margin-top: 20px; /* Space above button */
